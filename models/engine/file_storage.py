@@ -41,7 +41,7 @@ class FileStorage:
             self.__objects[key] = obj
 
     def get(self, cls, id):
-        """method to retrieve one object"""
+        """method to retrieve one object based on the class name and its ID"""
         objects = all(cls)
         for obj in objects.values():
             if obj.id == id:
