@@ -44,7 +44,7 @@ class FileStorage:
         """method to retrieve one object"""
         objects = all(cls)
         for obj in objects.values():
-            if obj.id = id:
+            if obj.id == id:
                 return obj
         return None
 
