@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This is the app file for the api"""
 
-from flask import Flask, make_response
+from flask import Flask
 from api.v1.views import app_views
 from models import storage
 from os import getenv
@@ -17,9 +17,9 @@ def teardown(exception):
 
 
 @app.errorhandler(404)
-def not_found(error):
+def not_found(exception):
     """handle 404 erros."""
-    return make_response(jsonify({"error": "Not found"}, 404))
+    return jsonify({"error": "Not found"}), 404
 
 
 if __name__ == "__main__":
